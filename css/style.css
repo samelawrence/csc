@@ -40,3 +40,8 @@ nav li a.active {
 #logo {
     margin: 0 auto;
 }
+
+#photos img {
+    max-width: 15%;
+    margin: 0 auto;
+}
