@@ -1,42 +1,61 @@
+/* global styling */
+
+html,
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   color: black;
-  font-family: "Domine", serif;
-  background-image: url("../images/bg.png");
+  font-family: 'Domine', serif;
+  background-image: url('../images/bg.png');
 }
 
 a {
   color: black;
+  text-decoration: none;
+  margin-left: auto;
 }
+
+li {
+  list-style: none;
+}
+
+/* header styling */
 
 header {
   width: 100%;
-  height: 70px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #3278cf;
 }
 
-br {
-  clear: both;
-}
-
-nav {
+.brand {
+  width: auto;
+  height: 100%;
+  float: left;
+  margin: 0 0 0 5%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   display: flex;
   justify-content: center;
 }
 
-nav ul {
-  list-style-type: none;
-  font-size: 20px;
+/* navigation styling */
+
+.menu {
+  width: 40%;
+  height: 100%;
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  display: block;
+  justify-content: center;
 }
 
-nav li a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: black;
-}
-
-nav li a.active {
-  background-color: rgba(227, 227, 227, 0.5);
-}
+/* body styling */
 
 .container {
   margin-left: 10vh;
@@ -47,17 +66,8 @@ nav li a.active {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.nav-item {
-  margin: 0 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  color: #666;
-}
-
-.title {
-  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .section-title {
@@ -75,4 +85,76 @@ nav li a.active {
 #photos img {
   max-width: 15%;
   margin: 0 auto;
+}
+
+br {
+  clear: both;
+}
+
+/* ################### */
+
+.menu ul {
+  width: 100%;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.menu ul a {
+  color: #222;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: inherit;
+}
+
+.menu ul a:hover {
+  background-color: #222;
+  color: #fff;
+}
+#menuToggle {
+  display: none;
+}
+.menu-icon {
+  display: none;
+}
+/*Início das configurações da Navigation com dispositivos < 768px*/
+@media screen and (max-width: 768px) {
+  .menu {
+    width: 100%;
+    height: auto;
+  }
+  .menu ul {
+    display: block;
+    border: 2px black;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.3s;
+    -moz-transition: max-height 0.3s;
+    -ms-transition: max-height 0.3s;
+    -o-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+    /*Para fazer com que o menu saia da esquerda, você deve trocar max-height por max-width*/
+    /*Para fazer com que o menu saia da direita, você deve trocar max-height por max-width e setar float: right*/
+  }
+  .menu-icon {
+    width: 100px;
+    height: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 60px;
+  }
+  #menuToggle:checked ~ ul {
+    max-height: 350px;
+    /*Para fazer com que o menu saia da esquerda ou direita, você deve trocar max-height por max-width*/
+  }
+  .menu-icon span {
+    font-size: 1.7em;
+  }
 }
