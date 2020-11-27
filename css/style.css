@@ -12,7 +12,7 @@ body {
 /* navigation styling */
 
 nav {
-  max-height: 100px;
+  max-height: 80px;
   max-width: 1200px; /* should match the width of your website content */
   display: flex;
   align-items: center; /* center each of our links vertically */
@@ -21,16 +21,44 @@ nav {
   margin-bottom: 20px;
 }
 
-a.logo {
-  margin-right: auto;
+nav a.logo {
   position: relative;
-  height: 100px;
+  max-height: 80px;
+  width: 200px;
+  display: flex;
+  margin-right: auto;
+  float: left;
+  justify-content: center;
+  background-image: url('../images/bg.png');
 }
 
-a img {
-  position: absolute;
-  width: 100%;
+.menu {
+  width: 40%;
   height: 100%;
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  color: #222;
+}
+
+.menu a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  height: inherit;
+  /* break */
+  width: auto;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+.menu a:hover {
+  background-color: #3278cf;
+  color: #fff;
 }
 
 .dropdown-link-container > a {
@@ -41,29 +69,11 @@ a img {
   display: none; /* hide our hamburger button until we're on mobile */
 }
 
-.menu {
-  width: 40%;
-  height: 100%;
-  float: right;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  display: block;
-  justify-content: center;
-}
-
 /* body styling */
 
 .container {
-  margin-left: 10vh;
-  margin-right: 10vh;
-}
-
-/* .logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   
-} */
+}
 
 .section-title {
   font-size: 1em;
@@ -75,6 +85,8 @@ a img {
 .body-text {
   padding-top: 1vh;
   text-align: center;
+  margin-left: 10vh;
+  margin-right: 10vh;
 }
 
 #photos img {
@@ -145,7 +157,6 @@ br {
   }
   #menuToggle:checked ~ ul {
     max-height: 350px;
-    /*Para fazer com que o menu saia da esquerda ou direita, você deve trocar max-height por max-width*/
   }
   .menu-icon span {
     font-size: 1.7em;
