@@ -1,49 +1,45 @@
-/* global styling */
-
 html,
 body {
-  width: 100%;
+  max-width: 1200px;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   color: black;
   font-family: 'Domine', serif;
   background-image: url('../images/bg.png');
 }
 
-a {
-  color: black;
-  text-decoration: none;
-  margin-left: auto;
-}
-
-li {
-  list-style: none;
-}
-
-/* header styling */
-
-header {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-family: sans-serif;
-  background-color: #3278cf;
-}
-
-.brand {
-  width: auto;
-  height: 100%;
-  float: left;
-  margin: 0 0 0 5%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-}
-
 /* navigation styling */
+
+nav {
+  max-height: 100px;
+  max-width: 1200px; /* should match the width of your website content */
+  display: flex;
+  align-items: center; /* center each of our links vertically */
+  margin: auto; /* center all our content horizontally when we exceed that max-width */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+a.logo {
+  margin-right: auto;
+  position: relative;
+  height: 100px;
+}
+
+a img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-link-container > a {
+  margin-left: 20px; /* space out all our links */
+}
+
+.mobile-dropdown-toggle {
+  display: none; /* hide our hamburger button until we're on mobile */
+}
 
 .menu {
   width: 40%;
@@ -62,13 +58,12 @@ header {
   margin-right: 10vh;
 }
 
-.logo {
+/* .logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+  
+} */
 
 .section-title {
   font-size: 1em;
@@ -122,7 +117,7 @@ br {
 .menu-icon {
   display: none;
 }
-/*Início das configurações da Navigation com dispositivos < 768px*/
+
 @media screen and (max-width: 768px) {
   .menu {
     width: 100%;
@@ -138,8 +133,6 @@ br {
     -ms-transition: max-height 0.3s;
     -o-transition: max-height 0.3s;
     transition: max-height 0.3s;
-    /*Para fazer com que o menu saia da esquerda, você deve trocar max-height por max-width*/
-    /*Para fazer com que o menu saia da direita, você deve trocar max-height por max-width e setar float: right*/
   }
   .menu-icon {
     width: 100px;
